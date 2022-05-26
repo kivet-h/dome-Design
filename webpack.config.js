@@ -17,6 +17,12 @@ module.exports = {
   // 模块
   module: {
     // 规则
-    rules: []
+    rules: [
+      {
+        test: /\.tsx?$/,
+        use: 'babel-loader',
+        exclude: /node_modules/
+      }
+    ]
   }
 };
