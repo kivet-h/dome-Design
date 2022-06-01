@@ -1,5 +1,6 @@
 // webpack.config.js
 const {resolve} = require("path");
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 module.exports = {
   // 组件库的起点入口
   entry: './src/index.tsx',
@@ -28,7 +29,28 @@ module.exports = {
         test: /\.tsx?$/,
         use: 'babel-loader',
         exclude: /node_modules/
+      },
+      {
+        test: /\.less$/,
+        use: [
+          // webpack中的顺序是【从后向前】链式调用的
+          // 所以对于less先交给less-loader处理，转为css
+          // 再交给css-loader
+          // 最后导出css（MiniCssExtractPlugin.loader）
+          // 所以注意loader的配置顺序
+          {
+            loader: MiniCssExtractPlugin.loader,
+          },
+          'css-loader',
+          'less-loader'
+        ]
       }
     ]
-  }
+  },
+  plugins: [
+    // 插件用于最终的导出独立的css的工作
+    new MiniCssExtractPlugin({
+      filename: 'r-ui.umd.css'
+    }),
+  ]
 };
