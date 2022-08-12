@@ -1,5 +1,6 @@
 import * as React from "react";
 import styles from './index.module.less';
+import IconSearch from "../../assets/svg/search.svg";
 
 interface SearchInputProps {
     defaultValue?: string;
@@ -25,7 +26,9 @@ const SearchInput: React.FC<SearchInputProps> = (props) => {
         // 包裹
         <div className={styles.searchInputWrap}>
             {/*存放icon*/}
-            <div className={styles.searchInputIconBox}></div>
+            <div className={styles.searchInputIconBox}>
+                <IconSearch width={18} height={18}/>
+            </div>
             {/* 输入框*/}
             <input className={styles.searchInput}
                    defaultValue={defaultValue}
