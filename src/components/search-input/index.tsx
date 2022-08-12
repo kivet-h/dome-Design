@@ -1,4 +1,5 @@
 import * as React from "react";
+import styles from './index.module.less';
 
 interface SearchInputProps {
     defaultValue?: string;
@@ -22,13 +23,20 @@ const SearchInput: React.FC<SearchInputProps> = (props) => {
 
     return (
         // 包裹
-        <div>
+        <div className={styles.searchInputWrap}>
             {/*存放icon*/}
-            <div></div>
+            <div className={styles.searchInputIconBox}></div>
             {/* 输入框*/}
-            <input defaultValue={defaultValue}
+            <input className={styles.searchInput}
+                   defaultValue={defaultValue}
                    placeholder={placeholder}
                    onChange={inputOnChange}></input>
         </div>
     );
+}
+
+
+export {
+    SearchInput,
+    SearchInputProps
 }
