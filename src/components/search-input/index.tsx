@@ -38,4 +38,3 @@ const DrSearchInput: React.FC<DrSearchInputProps> = (props) => {
 };
 
 export { DrSearchInput };
-export type { DrSearchInputProps };
