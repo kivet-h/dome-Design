@@ -25,7 +25,7 @@
     "rootDir": "./src" /* 指定输出文件目录（用于输出），用于控制输出目录结构 */,
     "jsx": "react"
   },
-  "include": ["src", "./src/external.d.ts"],
+  "include": ["src"],
   "exclude": ["./node_modules"]
 }
 
