@@ -1,2 +1,2 @@
-export {default as Button} from './components/button';
-export {SearchInput, SearchInputProps} from './components/search-input';
+export { default as DrButton } from "./components/button";
+export { DrSearchInput, DrSearchInputProps } from "./components/search-input";
