@@ -26,7 +26,7 @@ module.exports = {
     // 规则
     rules: [
       {
-        test: /\.tsx?$/,
+        test: /\.(j|t)sx?$/,
         use: "babel-loader",
         exclude: /node_modules/,
       },
