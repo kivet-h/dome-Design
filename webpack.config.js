@@ -5,10 +5,11 @@ module.exports = {
   // 组件库的起点入口
   entry: "./src/index.tsx",
   output: {
-    filename: "druid-design.umd.js", // 打包后的文件名
+    filename: "druid-design.umd.[chunkhash:8].js", // 打包后的文件名
     path: resolve(__dirname, "dist"), // 打包后的文件目录：根目录/dist/
-    library: "rui", // 导出的UMD js会在window挂rui，即可以访问window.rui
-    libraryTarget: "umd", // 导出库为UMD形式
+    // library: "rui", // 导出的UMD js会在window挂rui，即可以访问window.rui
+    // libraryTarget: "umd", // 导出库为UMD形式
+    publicPath: "/", // 打包后文件的公共前缀路径
   },
   resolve: {
     // webpack 默认只处理js、jsx等js代码
@@ -59,7 +60,7 @@ module.exports = {
   plugins: [
     // 插件用于最终的导出独立的css的工作
     new MiniCssExtractPlugin({
-      filename: "druid-design.umd.css",
+      filename: "druid-design.umd.[chunkhash:8].css",
     }),
   ],
 };
