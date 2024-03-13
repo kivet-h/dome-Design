@@ -21,7 +21,9 @@
     },
     "declaration": true /* 生成相应的 '.d.ts' file. */,
     "declarationDir": "./dist/types" /* 类型声明文件输出目录 */,
-    "jsx": "react"
+    "jsx": "react",
+    "rootDir": "./src",
+    "outDir": "./dist"
   },
   "include": ["src", "./src/external.d.ts"],
   "exclude": ["./node_modules"]
