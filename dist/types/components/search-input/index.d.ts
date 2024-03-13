@@ -6,4 +6,3 @@ interface DrSearchInputProps {
 }
 declare const DrSearchInput: React.FC<DrSearchInputProps>;
 export { DrSearchInput };
-export type { DrSearchInputProps };
